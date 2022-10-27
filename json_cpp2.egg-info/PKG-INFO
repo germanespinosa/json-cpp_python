@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: json-cpp2
+Version: 0.0.101
+Summary: A better json library
+Author: German Espinosa
+Author-email: germanespinosa@gmail.com
+Requires-Python: >=3.6
+Provides-Extra: test
