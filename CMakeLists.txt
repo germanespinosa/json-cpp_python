@@ -38,13 +38,14 @@ set (json_cpp_files_python
         ${Json-cpp_FOLDER}/src/json_util.cpp
         src/json_descriptor.cpp
         src/json_python.cpp
+        src/__init__.py
         )
 
-pybind11_add_module(cmake_example ${json_cpp_files_python})
+pybind11_add_module(json_cpp2_core ${json_cpp_files_python})
 
 # EXAMPLE_VERSION_INFO is defined by setup.py and passed into the C++ code as a
 # define (VERSION_INFO) here.
-target_compile_definitions(cmake_example
+target_compile_definitions(json_cpp2_core
                            PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
 
 #    add_catch_test( python_module_tests

@@ -126,7 +126,7 @@ setup(
     author_email="germanespinosa@gmail.com",
     description="A better json library",
     long_description="",
-    ext_modules=[CMakeExtension("cmake_example")],
+    ext_modules=[CMakeExtension("json_cpp2")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     extras_require={"test": ["pytest>=6.0"]},
