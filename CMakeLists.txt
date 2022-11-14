@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.4...3.18)
-project(cmake_example)
+project(json_cpp2)
 
 ####
 #### DEPENDENCIES
@@ -19,6 +19,7 @@ endif()
 #### END DEPENDENCIES
 ####
 
+
 install_git_dependency( Json-cpp
         https://github.com/germanespinosa/json-cpp
         INCLUDE_DIRECTORIES include )
@@ -29,6 +30,10 @@ install_git_dependency( Pybind11
         INCLUDE_DIRECTORIES
         include )
 
+install_git_dependency( Catch
+        https://github.com/germanespinosa/catch
+        ADD_SUBDIRECTORY)
+
 include_directories(include)
 
 set (json_cpp_files_python
@@ -37,18 +42,15 @@ set (json_cpp_files_python
         ${Json-cpp_FOLDER}/src/json_buffer.cpp
         ${Json-cpp_FOLDER}/src/json_util.cpp
         src/json_descriptor.cpp
-        src/json_python.cpp
         )
 
-pybind11_add_module(cmake_example ${json_cpp_files_python})
+pybind11_add_module(json_cpp2_core src/json_python.cpp ${json_cpp_files_python})
 
-# EXAMPLE_VERSION_INFO is defined by setup.py and passed into the C++ code as a
-# define (VERSION_INFO) here.
-target_compile_definitions(cmake_example
+target_compile_definitions(json_cpp2_core
                            PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
 
-#    add_catch_test( python_module_tests
-#            TEST_FILES
-#            python/json-cpp2/src/json_python_tests.cpp
-#            SOURCE_FILES ${json_cpp_module_files}
-#            INCLUDE_DIRECTORIES include)
+add_catch_test( python_module_tests
+        TEST_FILES
+        src/json_python_tests.cpp
+        SOURCE_FILES ${json_cpp_files_python}
+        INCLUDE_DIRECTORIES include)

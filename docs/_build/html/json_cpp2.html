@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>json_cpp2 package &mdash; JSON-CPP 2.0.0b documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to JSON-CPP’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> JSON-CPP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">json_cpp2 package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-json_cpp2">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#json_cpp2.JsonList"><code class="docutils literal notranslate"><span class="pre">JsonList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonList.append"><code class="docutils literal notranslate"><span class="pre">JsonList.append()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonList.create_class"><code class="docutils literal notranslate"><span class="pre">JsonList.create_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonList.get"><code class="docutils literal notranslate"><span class="pre">JsonList.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonList.load"><code class="docutils literal notranslate"><span class="pre">JsonList.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonList.select"><code class="docutils literal notranslate"><span class="pre">JsonList.select()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonList.to_file"><code class="docutils literal notranslate"><span class="pre">JsonList.to_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonList.where"><code class="docutils literal notranslate"><span class="pre">JsonList.where()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#json_cpp2.JsonObject"><code class="docutils literal notranslate"><span class="pre">JsonObject</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonObject.create_class"><code class="docutils literal notranslate"><span class="pre">JsonObject.create_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonObject.keys"><code class="docutils literal notranslate"><span class="pre">JsonObject.keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonObject.load"><code class="docutils literal notranslate"><span class="pre">JsonObject.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonObject.to_file"><code class="docutils literal notranslate"><span class="pre">JsonObject.to_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#json_cpp2.JsonParser"><code class="docutils literal notranslate"><span class="pre">JsonParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonParser.check_supported_type"><code class="docutils literal notranslate"><span class="pre">JsonParser.check_supported_type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonParser.from_file"><code class="docutils literal notranslate"><span class="pre">JsonParser.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonParser.from_url"><code class="docutils literal notranslate"><span class="pre">JsonParser.from_url()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonParser.is_supported_type"><code class="docutils literal notranslate"><span class="pre">JsonParser.is_supported_type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonParser.parse"><code class="docutils literal notranslate"><span class="pre">JsonParser.parse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonParser.to_file"><code class="docutils literal notranslate"><span class="pre">JsonParser.to_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json_cpp2.JsonParser.to_json"><code class="docutils literal notranslate"><span class="pre">JsonParser.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#json_cpp2.MemberNotFoundError"><code class="docutils literal notranslate"><span class="pre">MemberNotFoundError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JSON-CPP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">json_cpp2 package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/json_cpp2.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="json-cpp2-package">
+<h1>json_cpp2 package<a class="headerlink" href="#json-cpp2-package" title="Permalink to this heading"></a></h1>
+<section id="module-json_cpp2">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-json_cpp2" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="json_cpp2.JsonList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">json_cpp2.</span></span><span class="sig-name descname"><span class="pre">JsonList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">type</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_null_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json_cpp2.JsonList" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>, <a class="reference internal" href="#json_cpp2.JsonParser" title="json_cpp2.JsonParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonParser</span></code></a></p>
+<p>Provides json translation for iterable types.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonList.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#json_cpp2.JsonList.append" title="Permalink to this definition"></a></dt>
+<dd><p>Validates type and nullability and adds the element to the list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TypeError</strong> – when item is of the wrong type</p></li>
+<li><p><strong>RuntimeError</strong> – when item is null and allow_null_values is set to False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>item</strong> (<em>any</em>) – value to be added to the list</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">JsonList</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">allow_null_values</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="go">[1,2,3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonList.create_class">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">type</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_null_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">type</span></span></span><a class="headerlink" href="#json_cpp2.JsonList.create_class" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new type with a JsonList specification</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of the class to be created. if empty, an autogenerated name will be provided</p></li>
+<li><p><strong>list_type</strong> (<em>supported type</em>) – supported type. if empty, the list will allow elements from any supported type</p></li>
+<li><p><strong>iterable</strong> (<em>iterable</em>) – initial values for every new instance of the class. if empty, the list will be initialized empty</p></li>
+<li><p><strong>allow_null_values</strong> (<em>bool</em>) – allows the list to hold null values. they will be translated to None. default is True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the new type</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>type</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span> <span class="o">=</span> <span class="n">JsonList</span><span class="o">.</span><span class="n">create_class</span><span class="p">(</span><span class="n">list_type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">iterable</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">IntList</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span>
+<span class="go">[1, 2, 3, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;a string&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+ <span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">value of wrong type: expected &lt;class &#39;int&#39;&gt;, received &lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonList.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member_name_or_lambda</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#json_cpp2.JsonParser" title="json_cpp2.JsonParser"><span class="pre">JsonParser</span></a></span></span><a class="headerlink" href="#json_cpp2.JsonList.get" title="Permalink to this definition"></a></dt>
+<dd><p>Selects a member from an object or executes a lambda on every element of the list.
+The lambda should return a value of a supported type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>member_name_or_lambda</strong> (<em>str</em><em> or </em><em>lambda</em>) – if type is string, the values in the list must be objects, and they must contain an element with that name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a JsonList with the results</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#json_cpp2.JsonList" title="json_cpp2.JsonList">JsonList</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonList.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#json_cpp2.JsonParser" title="json_cpp2.JsonParser"><span class="pre">JsonParser</span></a></span></span><a class="headerlink" href="#json_cpp2.JsonList.load" title="Permalink to this definition"></a></dt>
+<dd><p>Parses a json_string and loads the values into the list, validating type and nullability</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>json_string</strong> – valid json string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the list itself</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonList.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member_names</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#json_cpp2.JsonParser" title="json_cpp2.JsonParser"><span class="pre">JsonParser</span></a></span></span><a class="headerlink" href="#json_cpp2.JsonList.select" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a list of objects with new objects of a new type containing a subset of the members from the originals</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>member_names</strong> (<em>list</em><em> of </em><em>str</em>) – list of member to be included in the new list</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the new list of objects of the new type</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#json_cpp2.JsonList" title="json_cpp2.JsonList">JsonList</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonList.to_file">
+<span class="sig-name descname"><span class="pre">to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#json_cpp2.JsonList.to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the list to a file in json format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – path to the file</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">JsonList</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">&#39;[1,2,3]&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonList.where">
+<span class="sig-name descname"><span class="pre">where</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_criteria</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#json_cpp2.JsonParser" title="json_cpp2.JsonParser"><span class="pre">JsonParser</span></a></span></span><a class="headerlink" href="#json_cpp2.JsonList.where" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a list with elements that passes a criteria</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambda_criteria</strong> (<em>lambda</em>) – lambda receiving each element and returning a bool</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the new list</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#json_cpp2.JsonList" title="json_cpp2.JsonList">JsonList</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="json_cpp2.JsonObject">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">json_cpp2.</span></span><span class="sig-name descname"><span class="pre">JsonObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_mandatory_members</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_allow_undefined_members</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json_cpp2.JsonObject" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#json_cpp2.JsonParser" title="json_cpp2.JsonParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonParser</span></code></a></p>
+<p>Provides json translation for objects.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonObject.create_class">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_mandatory_members</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_allow_undefined_members</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">type</span></span></span><a class="headerlink" href="#json_cpp2.JsonObject.create_class" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new type with a JsonObject specification</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_name</strong> – (optional) name of the class to be created. if empty, an autogenerated name will be provided</p></li>
+<li><p><strong>_mandatory_members</strong> – list of strings containing the names of the mandatory members</p></li>
+<li><p><strong>_allow_undefined_members</strong> – boolean. default True. allows additional members to be added during parsing</p></li>
+<li><p><strong>kwargs</strong> – list of members and values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the new type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonObject.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#json_cpp2.JsonList" title="json_cpp2.JsonList"><span class="pre">JsonList</span></a></span></span><a class="headerlink" href="#json_cpp2.JsonObject.keys" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonObject.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#json_cpp2.JsonParser" title="json_cpp2.JsonParser"><span class="pre">JsonParser</span></a></span></span><a class="headerlink" href="#json_cpp2.JsonObject.load" title="Permalink to this definition"></a></dt>
+<dd><p>Parses a json_string and loads the members into the object, validating type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>json_string</strong> – valid json string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the object itself</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonObject.to_file">
+<span class="sig-name descname"><span class="pre">to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#json_cpp2.JsonObject.to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the list to a file in json format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – path to the file</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">o</span> <span class="o">=</span> <span class="n">JsonObject</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">o</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">&#39;object_data.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;object_data.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">&#39;{&quot;a&quot;:10,&quot;b&quot;:20}&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">json_cpp2.</span></span><span class="sig-name descname"><span class="pre">JsonParser</span></span><a class="headerlink" href="#json_cpp2.JsonParser" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides access to the json parsing and writing functionality.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser.check_supported_type">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_supported_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_or_type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#json_cpp2.JsonParser.check_supported_type" title="Permalink to this definition"></a></dt>
+<dd><p>Raises an exception if value or type is not supported by json-cpp</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value_or_type</strong> (<em>any value</em><em> or </em><em>type</em>) – value or type to be checked</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TypeError</strong> – when value or type is not supported</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="s2">&quot;a string&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">check_supported_type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+ <span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">type &lt;class &#39;object&#39;&gt; is not supported</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json_cpp2.JsonParser.from_file" title="Permalink to this definition"></a></dt>
+<dd><p>Creates an instance of the corresponding type (None, bool, int, float, string, JsonObject or JsonList)
+and loads the values from a file containing a valid json string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – path to  the file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value in its corresponding type</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None, bool, int, float, string, <a class="reference internal" href="#json_cpp2.JsonObject" title="json_cpp2.JsonObject">JsonObject</a> or <a class="reference internal" href="#json_cpp2.JsonList" title="json_cpp2.JsonList">JsonList</a></p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;{&quot;a&quot;:10,&quot;b&quot;:20}&#39;</span><span class="p">)</span>
+<span class="go">15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">o</span> <span class="o">=</span> <span class="n">JsonParser</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+<span class="go">20</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser.from_url">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json_cpp2.JsonParser.from_url" title="Permalink to this definition"></a></dt>
+<dd><p>Creates an instance of the corresponding type (None, bool, int, float, string, JsonObject or JsonList)
+and loads the values from an url containing a valid json string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>HTTPError</strong> – when failes to download content</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>uri</strong> (<em>str</em>) – path to  the file</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the value in its corresponding type</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None, bool, int, float, string, <a class="reference internal" href="#json_cpp2.JsonObject" title="json_cpp2.JsonObject">JsonObject</a> or <a class="reference internal" href="#json_cpp2.JsonList" title="json_cpp2.JsonList">JsonList</a></p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">o</span> <span class="o">=</span> <span class="n">JsonParser</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/germanespinosa/cellworld_data/master/test.json&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">member1</span><span class="p">)</span>
+<span class="go">value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">member2</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser.is_supported_type">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_supported_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_or_type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#json_cpp2.JsonParser.is_supported_type" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if a value or type is supported by json-cpp</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value_or_type</strong> (<em>any value</em><em> or </em><em>type</em>) – value or type to be checked</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if value or type is supported, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">is_supported_type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser.parse">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json_cpp2.JsonParser.parse" title="Permalink to this definition"></a></dt>
+<dd><p>Parses a valid json string into the corresponding value type
+(None, bool, int, float, string, JsonObject or JsonList)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – when string cannot be parsed</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>json_string</strong> (<em>str</em>) – the string to be parsed</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the value in its corresponding type</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None, bool, int, float, string, <a class="reference internal" href="#json_cpp2.JsonObject" title="json_cpp2.JsonObject">JsonObject</a> or <a class="reference internal" href="#json_cpp2.JsonList" title="json_cpp2.JsonList">JsonList</a></p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;true&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;[1,2,3]&#39;</span><span class="p">)</span>
+<span class="go">[1, 2, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;{&quot;a&quot;:10,&quot;b&quot;:20}&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;{&quot;a&quot;:10,&quot;b&quot;:20}&#39;</span><span class="p">)[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser.to_file">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#json_cpp2.JsonParser.to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the value to a file in json format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – if type of value is not supported</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>value</strong> (<em>any supported value type</em>) – value to be saved</p></li>
+<li><p><strong>file_path</strong> (<em>str</em>) – path to the file</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">to_file</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">},</span> <span class="s1">&#39;data.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">&#39;{&quot;a&quot;:10,&quot;b&quot;:20}&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="json_cpp2.JsonParser.to_json">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#json_cpp2.JsonParser.to_json" title="Permalink to this definition"></a></dt>
+<dd><p>Converts any supported value to a valid json string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>any supported type</em>) – value or type to be converted</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TypeError</strong> – when value or type is not supported</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">&#39;null&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">&#39;true&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">to_json</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="kc">None</span><span class="p">])</span>
+<span class="go">&#39;[1,2,3,null]&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">to_json</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="kc">None</span><span class="p">))</span>
+<span class="go">&#39;[1,2,3,null]&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">JsonParser</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">JsonObject</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="go">&#39;{&quot;a&quot;:10,&quot;b&quot;:20}&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="json_cpp2.MemberNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">json_cpp2.</span></span><span class="sig-name descname"><span class="pre">MemberNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json_cpp2.MemberNotFoundError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to JSON-CPP’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, German Espinosa.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

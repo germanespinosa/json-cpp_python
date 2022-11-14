@@ -114,9 +114,26 @@ TEST_CASE("Json_variant_descriptor"){
     cout << jv << endl;
 }
 
-TEST_CASE("Json_date") {
-    float i=std::time(nullptr);
 
+TEST_CASE("Python_test") {
+    Json_object_descriptor jod;
+    Json_bool_descriptor jbd(true);
+    jod.add_member("a",jbd, true);
+    Json_int_descriptor jbi(10);
+    jod.add_member("b",jbi, true);
+    Json_float_descriptor jbf(15.5);
+    jod.add_member("c",jbf, true);
+    Json_string_descriptor jbs("other");
+    jod.add_member("d",jbs, true);
+    Json_list_descriptor jbl;
+    jbl.set_item_descriptor(jbi);
+    jbl.value.values.emplace_back(jbi.new_item());
+    jbl.value.values.emplace_back(jbi.new_item());
+    jbl.value.values.emplace_back(jbi.new_item());
+    jod.add_member("e",jbl, true);
+    cout << jod << endl;
+    jod.from_json("{\"a\":false,\"b\":66,\"c\":5.22,\"d\":\"value\",\"e\":[4.5,5,6,7]}");
+    cout << jod << endl;
 }
 
 //TEST_CASE("Json_value_bool"){
