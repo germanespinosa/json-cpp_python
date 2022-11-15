@@ -174,5 +174,4 @@ class Parse(unittest.TestCase):
         self.assertEqual(JsonParser.to_json((1, 2, 3)), "[1,2,3]")
 
 
-if __name__ == '__main__':
-    unittest.main()
+unittest.main(verbosity=True)
