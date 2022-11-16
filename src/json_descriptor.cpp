@@ -192,11 +192,13 @@ namespace json_cpp {
         char c;
         while ((']' != (c = Json_util::skip_blanks(i)))) {
             if (c == 'n' && allow_null_values) {
-                auto &item = value.values.emplace_back(Json_null_descriptor().new_item());
+                auto item = Json_null_descriptor().new_item();
                 item->json_parse(i);
+                value.values.push_back(std::move(item));
             } else {
-                auto &item = value.values.emplace_back(item_descriptor->new_item());
+                auto item = item_descriptor->new_item();
                 item->json_parse(i);
+                value.values.push_back(std::move(item));
             }
             if (Json_util::skip_blanks(i) != ',') break;
             Json_util::discard(i);
